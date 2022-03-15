@@ -14,8 +14,6 @@ output:
       smooth_scroll: yes
 ---
 
-![](./img/ikiam.png)
-
 **Bienvenidos al examen final de GBI6 - Bioinformática.**
 
 # CONTENIDO DE LA EVALUACIÓN
@@ -116,9 +114,8 @@ colnames(df_long)
 # Escriba el código para crear el Descriptive table 
 library(sjPlot)
 library(sjmisc)
-df_long
-descr()
-
+df_long_1 <- df_long %>% group_by(dataset, gen) 
+descr(df_long_1, out = "viewer", file = "results/mRNA_expr_summary.doc")
 ```
 
 ### [0.5 PUNTOS] 1.6 Interprete los resultados de la tabla resultante de la sección 1.5. 
