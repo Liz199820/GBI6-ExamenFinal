@@ -97,7 +97,6 @@ long_df <- df %>% pivot_longer(3:9, names_to = "gen", values_to = "expresion_lev
 
 ```
 
-
 ### [1 PUNTO] Genere la data ```df_long``` utilizandola función ```long_df```. 
 La tabla resultante tendrá tres columnas: ```dataset, gen, expresion_level```.  
 ```{r df_long}
@@ -115,6 +114,10 @@ colnames(df_long)
 ### [0.5 PUNTOS] 1.5 A partir de la data ```df_long```, genere un **Descriptive table** (librería ```sjPlot```) y guárdelo en el subdirectorio "result"  con el nombre **mRNA_expr_summary.doc** (previamente debe seleccionar las celdas adecuadas con funciones de la librería ```dplyr``` en conjunto con el operador ```%>%```). 
 ```{r desc_table}
 # Escriba el código para crear el Descriptive table 
+library(sjPlot)
+library(sjmisc)
+df_long
+descr()
 
 ```
 
@@ -125,8 +128,6 @@ colnames(df_long)
 # Escriba aquí su interpretación 
 
 ```
-
-
 
 ## **Pregunta 2 VISUALIZACION DE DATOS  [5 PUNTOS]**
 
