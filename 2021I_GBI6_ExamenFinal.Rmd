@@ -134,7 +134,10 @@ Para esta pregunta tiene que utilizar la data ```df_long```.
 
 ```{r}
 # Escriba el código para crear la función tcga_boxplots
+gen_1 <- df_long %>% dplyr::filter(gen == "GATA3")
+library(ggplot2)
 
+gen_1 %>% ggplot (aes(x= gen, y= expresion_level)) + geom_boxplot() + geom_jitter()
 
 ```
 
