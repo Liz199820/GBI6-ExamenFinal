@@ -102,6 +102,13 @@ long_df <- df %>% pivot_longer(3:9, names_to = "gen", values_to = "expresion_lev
 La tabla resultante tendrá tres columnas: ```dataset, gen, expresion_level```.  
 ```{r df_long}
 # Genere la data df_long 
+library(ggplot2)
+library(dplyr)
+df_long <- long_df
+colnames(df_long)
+
+df_long <-long_df %>% select(dataset, gen, expresion_level)
+colnames(df_long)
 
 ```
 
