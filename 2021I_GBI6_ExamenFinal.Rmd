@@ -80,7 +80,6 @@ Para comprender la data de esta evaluación se requiere conocer el significado d
 rm(list=ls())
 setwd("/Users/a123k/OneDrive/Documentos/GitHub/GBI6-ExamenFinal")
 
-
 ```
 
 ### [0.5 PUNTOS] 1.2. Cargue la data "mRNA_expr.csv"
@@ -92,7 +91,9 @@ df <- read.csv("data/mRNA_expr.csv")
 
 ```{r funcion_long}
 # Escriba aquí la función long_df
-
+# pivot_longer
+library("tidyr")
+long_df <- df %>% pivot_longer(3:9, names_to = "gen", values_to = "expresion_level")
 
 ```
 
