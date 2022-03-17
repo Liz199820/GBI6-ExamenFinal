@@ -149,7 +149,7 @@ Para esta pregunta tiene que utilizar la data ```df_long```.
 library(ggplot2)
 tcga_boxplots <- function(data){
 LG <- df_long %>% filter(dataset == data)
-plot <- LG %>% ggplot(aes(x = gen, y = expresion_level)) + geom_boxplot() + geom_jitter(alpha=0.9, size=0.5)} 
+plot <- LG %>% ggplot(aes(x = gen, y = expresion_level, color= continent)) + geom_boxplot() + geom_jitter(alpha=0.9, size=0.5)} 
 ```
 
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
@@ -172,8 +172,9 @@ ggsave(filename = "result/boxplot3.png", dpi = 300)
 
 ```{r reg_gen_exp}
 # Escriba aquí su función reg_gen_expression
-
-
+ren_gen_expression <- function(gen){
+GS <- df_long %>% filter(dataset == GATA3)
+} geom_point(mapping = aes(x = GATA3, y = FN1)
 ```
 
 
