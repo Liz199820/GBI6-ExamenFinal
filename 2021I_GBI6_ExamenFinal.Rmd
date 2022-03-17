@@ -123,6 +123,18 @@ descr(df_long_1, out = "viewer", file = "results/mRNA_expr_summary.doc")
 
 ```{tex}
 # Escriba aquí su interpretación 
+BCRA: En la caja de bigotes se puede observar que en los genes GAPH y PTEN existe una distribución normal con respecto a la mediana, pues son más simétricos y su nivel de dispersión de los puntos es pequeña con respecto a los niveles atípicos. 
+Por otro lado, con respecto a casi todos los genes, estos presentan una dispersión atípica.Se observan valores atípicos sobre la mediana y bajo la mediana, esto indica que existen niveles de expresión más bajos en ESR1, GATA3, XBP1, FN1, MUC, y en tanto a GADPH y PTEN presentan niveles de expresión altos como bajos.Por último, se obsserva una gran cantidad de puntos con respecto a otros tipos de cáncer, es decir hay una gran cantidad de datos.
+
+KIPAN: Se puede observar en este el tamaño de las cajas, FN1 y MUC1 presenta un gran dispersión por lo contrario se puede ver que en PTEN y GATA3 se presenta una menor dispersión de los datos (caja pequeña), aqui también se observan valores atípicos de expresión; son mayores en FN1 y GATA3 y menores en ESR1, GAPH, y XBP1.
+KIRP: Todos ppresentan expresiones asimétricas. Presenta una nube de puntos menor con respecto a los demás cancer esto debeido a una menor cantidad de datos. Se observa un valor atípico extremo, tienen una distribución anormal con respecto a la mediana, es decir hay casos de expresión anormales estos pueden ser afectados por factores como el cambio climático, la edad, y otros factores. GADPH y MUC1 presentan niveles de expresión altos (cajas grandes).
+
+LUSC: Se aprecia que GADPH y PTEN presentan simetría, es decir distribución normal con respecto a la mediana. También presenta valores atípicos extremos con respecto a la mediana por lo que se observa que en GATA3, ESR1 puede haber una expresión alta de los genes o baja.
+OV: Se observa una gran nube de puntos, por una gran cantidad de datos.
+
+UCEC: Se observa una baja nube de puntos, probablmente por que es una cantidad de datos menor. Se aprecia que MUC1 presenta una distribución normal de la expresión de este gen con respecto a la media, presenta asimetría. Por otro lado, ESR1 presenta una cantidad de dispersión, por ello presenta mayor debido a su tamaño de la caja, mientras que GADPH presenta una menor dispersión de los puntos con respecto a la mediana.
+
+Se observa además, : GADPH, PTEN Y GATA3 presentan asimetría con respecto a la mediana, es decir su nivel de expresión es normal. También se aprecia que la mayoría de genes presenta una distribución atípica extrema, se aprecia más en los genes ESR1, MUC1, PTEN pues los puntos están demasiado lejos con respecto a la mediana.
 
 ```
 
@@ -135,15 +147,16 @@ Para esta pregunta tiene que utilizar la data ```df_long```.
 ```{r}
 # Escriba el código para crear la función tcga_boxplots
 library(ggplot2)
-tcga_boxplots <- df_long %>% dplyr:: filter(dataset == "BRCA")
-tcga_boxplots <- df_long %>% ggplot(
-                                    
+tcga_boxplots <- function(data){
+LG <- df_long %>% filter(dataset == data)
+plot <- LG %>% ggplot(aes(x = gen, y = expresion_level)) + geom_boxplot() + geom_jitter(alpha=0.9, size=0.5)} 
+ejemplo <- tcga_boxplots("UCEC")
+ejemplo
 ```
 
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
 ```{r list_boxplots}
 # Escriba el código para generar la lista. 
-"BRCA, OV, LUSC, UCEC, KIRP, KIPAN")
 
 
 ```
@@ -175,7 +188,6 @@ tcga_boxplots <- df_long %>% ggplot(
 ### [0.5 PUNTOS] 2.6. Guarde en el subdirectorio ```result``` el onceavo plot de la lista ```reg_genplots``` con el nombre ```regresion11.pdf```. La definición de a figura debe ser de 300dpi. 
 ```{r reg11}
 # Escriba el código para guardar el onceavo plot. 
-
 ```
 
 
