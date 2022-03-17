@@ -150,8 +150,6 @@ library(ggplot2)
 tcga_boxplots <- function(data){
 LG <- df_long %>% filter(dataset == data)
 plot <- LG %>% ggplot(aes(x = gen, y = expresion_level)) + geom_boxplot() + geom_jitter(alpha=0.9, size=0.5)} 
-ejemplo <- tcga_boxplots("UCEC")
-ejemplo
 ```
 
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
