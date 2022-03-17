@@ -154,9 +154,10 @@ plot <- LG %>% ggplot(aes(x = gen, y = expresion_level)) + geom_boxplot() + geom
 
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
 ```{r list_boxplots}
-# Escriba el código para generar la lista. 
-
-
+# Escriba el código para generar la lista.
+list <- c("BRCA", "KIPAN","KIRP","LUSC","OV","UCEC")
+cancertype_boxplots <- lapply(list, tcga_boxplots)
+cancertype_boxplots
 ```
 
 ### [0.5 PUNTOS] 2.3 Guarde en el subdirectorio ```result``` el tercer plot de la lista ```cancertype_boxplots``` con el nombre ```boxplot3.png```. La definición de a figura debe ser de 300dpi. 
