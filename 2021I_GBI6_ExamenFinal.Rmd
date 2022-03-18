@@ -14,6 +14,9 @@ output:
       smooth_scroll: yes
 ---
 
+![](./img/ikiam.png)
+
+
 **Bienvenidos al examen final de GBI6 - Bioinformática.**
 
 # CONTENIDO DE LA EVALUACIÓN
@@ -115,7 +118,7 @@ colnames(df_long)
 library(sjPlot)
 library(sjmisc)
 df_long_1 <- df_long %>% group_by(dataset, gen) 
-descr(df_long_1, out = "viewer", file = "results/mRNA_expr_summary.doc")
+descr (df_long_1, out = "viewer", file = "result/mRNA_expr_summary.doc")
 ```
 
 ### [0.5 PUNTOS] 1.6 Interprete los resultados de la tabla resultante de la sección 1.5. 
@@ -149,7 +152,7 @@ Para esta pregunta tiene que utilizar la data ```df_long```.
 library(ggplot2)
 tcga_boxplots <- function(data){
 LG <- df_long %>% filter(dataset == data)
-plot <- LG %>% ggplot(aes(x = gen, y = expresion_level, color= continent)) + geom_boxplot() + geom_jitter(alpha=0.9, size=0.5)} 
+plot <- LG %>% ggplot(aes(x = gen, y = expresion_level)) + geom_boxplot() + geom_jitter(alpha=0.9, size=0.5)} 
 ```
 
 ### [0.5 PUNTOS] 2.2 Utilizando la función ```lapply()``` genera la lista ```cancertype_boxplots``` con las gráficas para cada tipo de cancer (cada tipo de dataset). 
@@ -172,9 +175,16 @@ ggsave(filename = "result/boxplot3.png", dpi = 300)
 
 ```{r reg_gen_exp}
 # Escriba aquí su función reg_gen_expression
-ren_gen_expression <- function(gen){
-GS <- df_long %>% filter(dataset == GATA3)
-} geom_point(mapping = aes(x = GATA3, y = FN1)
+reg_gen_expression <- function(cancer_type){
+  genx=cancer_type[1]
+ geny=cancer_type[2]
+L <- df_long %>% filter (gen == genx)
+I <- df_long %>% filter (gen == geny)
+Z <- cbind(L,I)
+E <- tibble("dataset"=Z[,1],"gen1"=Z[,3],"gen2"=Z[,6])
+G <- E %>% ggplot(aes(x = gen1, y = gen2, color= dataset)) + geom_point() + geom_smooth(method=lm, se=FALSE)
+}
+ 
 ```
 
 
@@ -182,19 +192,21 @@ GS <- df_long %>% filter(dataset == GATA3)
 ```{r list_regplots}
 # Escriba el código para generar la lista. 
 
+
 ```
 
 
 ### [0.5 PUNTOS] 2.6. Guarde en el subdirectorio ```result``` el onceavo plot de la lista ```reg_genplots``` con el nombre ```regresion11.pdf```. La definición de a figura debe ser de 300dpi. 
 ```{r reg11}
 # Escriba el código para guardar el onceavo plot. 
+
 ```
 
 
 ### [1 PUNTO] 2.7. Interprete los resultados de las figuras ```boxplot3.png``` y ```regresion11.pdf```.
 
 ```{tex}
-# Esciba aquí su intepretación
+# Escriba aquí su intepretación
 
 ```
 
