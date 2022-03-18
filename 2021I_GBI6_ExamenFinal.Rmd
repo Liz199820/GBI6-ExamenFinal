@@ -126,18 +126,18 @@ descr (df_long_1, out = "viewer", file = "result/mRNA_expr_summary.doc")
 
 ```{tex}
 # Escriba aquí su interpretación 
-BCRA: En la caja de bigotes se puede observar que en los genes GAPH y PTEN existe una distribución normal con respecto a la mediana, pues son más simétricos y su nivel de dispersión de los puntos es pequeña con respecto a los niveles atípicos. 
+-BCRA: En la caja de bigotes se puede observar que en los genes GAPH y PTEN existe una distribución normal con respecto a la mediana, pues son más simétricos y su nivel de dispersión de los puntos es pequeña con respecto a los niveles atípicos. 
 Por otro lado, con respecto a casi todos los genes, estos presentan una dispersión atípica.Se observan valores atípicos sobre la mediana y bajo la mediana, esto indica que existen niveles de expresión más bajos en ESR1, GATA3, XBP1, FN1, MUC, y en tanto a GADPH y PTEN presentan niveles de expresión altos como bajos.Por último, se obsserva una gran cantidad de puntos con respecto a otros tipos de cáncer, es decir hay una gran cantidad de datos.
 
-KIPAN: Se puede observar en este el tamaño de las cajas, FN1 y MUC1 presenta un gran dispersión por lo contrario se puede ver que en PTEN y GATA3 se presenta una menor dispersión de los datos (caja pequeña), aqui también se observan valores atípicos de expresión; son mayores en FN1 y GATA3 y menores en ESR1, GAPH, y XBP1.
-KIRP: Todos ppresentan expresiones asimétricas. Presenta una nube de puntos menor con respecto a los demás cancer esto debeido a una menor cantidad de datos. Se observa un valor atípico extremo, tienen una distribución anormal con respecto a la mediana, es decir hay casos de expresión anormales estos pueden ser afectados por factores como el cambio climático, la edad, y otros factores. GADPH y MUC1 presentan niveles de expresión altos (cajas grandes).
+-KIPAN: Se puede observar en este el tamaño de las cajas, FN1 y MUC1 presenta un gran dispersión por lo contrario se puede ver que en PTEN y GATA3 se presenta una menor dispersión de los datos (caja pequeña), aqui también se observan valores atípicos de expresión; son mayores en FN1 y GATA3 y menores en ESR1, GAPH, y XBP1.
+-KIRP: Todos presentan expresiones asimétricas. Presenta una nube de puntos menor con respecto a los demás cancer esto debeido a una menor cantidad de datos. Se observa un valor atípico extremo, tienen una distribución anormal con respecto a la mediana, es decir hay casos de expresión anormales estos pueden ser afectados por factores como el cambio climático, la edad, y otros factores. GADPH y MUC1 presentan niveles de expresión altos (cajas grandes).
 
-LUSC: Se aprecia que GADPH y PTEN presentan simetría, es decir distribución normal con respecto a la mediana. También presenta valores atípicos extremos con respecto a la mediana por lo que se observa que en GATA3, ESR1 puede haber una expresión alta de los genes o baja.
+-LUSC: Se aprecia que GADPH y PTEN presentan simetría, es decir distribución normal con respecto a la mediana. También presenta valores atípicos extremos con respecto a la mediana por lo que se observa que en GATA3, ESR1 puede haber una expresión alta de los genes o baja.
 OV: Se observa una gran nube de puntos, por una gran cantidad de datos.
 
-UCEC: Se observa una baja nube de puntos, probablmente por que es una cantidad de datos menor. Se aprecia que MUC1 presenta una distribución normal de la expresión de este gen con respecto a la media, presenta asimetría. Por otro lado, ESR1 presenta una cantidad de dispersión, por ello presenta mayor debido a su tamaño de la caja, mientras que GADPH presenta una menor dispersión de los puntos con respecto a la mediana.
+-UCEC: Se observa una baja nube de puntos, probablmente por que es una cantidad de datos menor. Se aprecia que MUC1 presenta una distribución normal de la expresión de este gen con respecto a la media, presenta asimetría. Por otro lado, ESR1 presenta una cantidad de dispersión, por ello presenta mayor debido a su tamaño de la caja, mientras que GADPH presenta una menor dispersión de los puntos con respecto a la mediana.
 
-Se observa además, : GADPH, PTEN Y GATA3 presentan asimetría con respecto a la mediana, es decir su nivel de expresión es normal. También se aprecia que la mayoría de genes presenta una distribución atípica extrema, se aprecia más en los genes ESR1, MUC1, PTEN pues los puntos están demasiado lejos con respecto a la mediana.
+-Se observa además, : GADPH, PTEN Y GATA3 presentan asimetría con respecto a la mediana, es decir su nivel de expresión es normal. También se aprecia que la mayoría de genes presenta una distribución atípica extrema, se aprecia más en los genes ESR1, MUC1, PTEN pues los puntos están demasiado lejos con respecto a la mediana.
 
 ```
 
@@ -213,11 +213,13 @@ ggsave(filename = "result/regresion11.pdf", dpi = 300)
 ```{tex}
 # Escriba aquí su intepretación
 #bloxplot3.png
-
-
+Se observa el nivel expresión de expresión del gen Carcinoma renal de células papilares (KIPR), la regresión de estos datos oscila entre el -3 y el 3. Todos presentan expresiones asimétricas. Presenta una nube de puntos menor con respecto a los demás cancer esto debeido a una menor cantidad de datos. Se observa un valor atípico extremo, tienen una distribución anormal con respecto a la mediana, es decir hay casos de expresión anormales estos pueden ser afectados por factores como el cambio climático, la edad, y otros factores. GADPH y MUC1 presentan niveles de expresión altos (cajas grandes).
 
 #regresion.pdf
-
+En cuanto a la regresión 11, se observa GADPH y PTEN estan ubicados en un mismo lugar, se puede ver que xisten valores que se alejan d ela nube de puntos.
+También se observa que el nivel de expresión del gen (GADPH)
+En cuanto a los genes  carcinoma de células escamosas al pulmón (LUSC), carcinoma invasivo de mama (BRCA), carcinoma de endometrio del cuerpo uterino(UCEC) y carcinoma renal de células papilares renales (KIRP) se observa que existe un relación que podría decirse que es inversamente proporcional con los genes GADPH y PTEN 
+En cuanto a Cistoadenocarnoma sereso de ovario (OV) y Cohorte pan-riñon (KIPAN) ocurre lo contrario, es decir existe una relación directamente proporcional, claramente s eobserva que si aumenta el nivel de expresión del gen PTEN, va aumentar el nivel de expresión de GADPH
 
 ```
 
